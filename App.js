@@ -3,13 +3,13 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 
 import Task from './components/Task';
 
 const App = () => {
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState();
   const [tasks, setTasks] = useState([]);
 
   const handleAddTask = () => {
     if (task.trim()) {
       setTasks([...tasks, task]);
-      setTask('');
+      setTask(null);
     }
   };
 
@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Today's Task</Text>
+      <Text style={styles.sectionTitle}>Today's Task</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -47,12 +47,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E8EAED',
     paddingTop: 50,
     paddingHorizontal: 20,
   },
-  title: {
-    fontSize: 24,
+  sectionTitle: {
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
   },
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
+    borderColor: 'skyblue',
+    borderRadius: 60,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginRight: 10,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    borderRadius: 55
+    borderRadius: 60,
   },
   scrollView: {
     flex: 1,
